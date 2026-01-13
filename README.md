@@ -1,7 +1,6 @@
 # Variant Calling Pipeline (Nextflow)
 
-This repository contains a complete single-end variant calling pipeline automated using **Nextflow**.  
-The pipeline identifies SNPs and small INDELs by comparing sequencing reads against a reference genome.
+This repository contains a complete single-end variant calling pipeline automated using **Nextflow**. The pipeline identifies SNPs and small INDELs by comparing sequencing reads against a reference genome.
 
 ---
 
@@ -60,7 +59,7 @@ Identification of SNPs and small INDELs using **BCFtools mpileup** and **BCFtool
 1. Setup
 Ensure you have Nextflow and Docker installed. Place your input data in the appropriate folders:
 
-     Raw reads: data/sample.fastq
+     Raw reads: data/sample.fastq    
      Reference: reference/chr22.fa
 
 
