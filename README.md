@@ -60,17 +60,17 @@ Identification of SNPs and small INDELs using **BCFtools mpileup** and **BCFtool
 1. Setup
 Ensure you have Nextflow and Docker installed. Place your input data in the appropriate folders:
 
-Raw reads: data/sample.fastq
-Reference: reference/chr22.fa
+     Raw reads: data/sample.fastq
+     Reference: reference/chr22.fa
 
 
 2. Execute Pipeline
 Run the pipeline from the project root directory:
 
-nextflow run main.nf
+     nextflow run main.nf
 
 
 3. Resume Execution
 If the pipeline stops or you need to re-run it after a change, use the -resume flag to skip successfully completed steps:
 
-nextflow run main.nf -resume
+     nextflow run main.nf -resume
