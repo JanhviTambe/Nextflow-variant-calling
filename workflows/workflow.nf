@@ -1,12 +1,12 @@
 
-include { FASTQC_RAW }      from './modules/fastqc_raw'
-include { TRIM_READS }      from './modules/trim_reads'
-include { FASTQC_TRIMMED }  from './modules/fastqc_trimmed'
-include { ALIGN_READS }     from './modules/align_reads'
-include { SAM_TO_BAM }      from './modules/sam_to_bam'
-include { SORT_INDEX_BAM }  from './modules/sort_index_bam'
-include { VARIANT_CALLING } from './modules/variant_calling'
-include { MULTIQC }         from './modules/multiqc'
+include { FASTQC_RAW }      from '../modules/fastqc_raw'
+include { TRIM_READS }      from '../modules/trim_reads'
+include { FASTQC_TRIMMED }  from '../modules/fastqc_trimmed'
+include { ALIGN_READS }     from '../modules/align_reads'
+include { SAM_TO_BAM }      from '../modules/sam_to_bam'
+include { SORT_INDEX_BAM }  from '../modules/sort_index_bam'
+include { VARIANT_CALLING } from '../modules/variant_calling'
+include { MULTIQC }         from '../modules/multiqc'
 
 workflow MY_PIPELINE {
     take:

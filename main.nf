@@ -1,5 +1,5 @@
 
-include { MY_PIPELINE }  from './worklfows/workflow.nf'
+include { MY_PIPELINE }  from './workflows/workflow.nf'
 
 workflow {    
     fastq_ch = Channel.fromPath(params.fastq, checkIfExists: true)
