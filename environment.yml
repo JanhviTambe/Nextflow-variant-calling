@@ -1,0 +1,13 @@
+name: variant-calling-env
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - nextflow=23.10.1
+  - fastqc=0.12.1
+  - cutadapt=4.4
+  - bwa=0.7.17
+  - samtools=1.17
+  - bcftools=1.17
+  - multiqc=1.14

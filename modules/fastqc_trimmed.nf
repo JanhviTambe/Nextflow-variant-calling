@@ -10,7 +10,7 @@ process FASTQC_TRIMMED {
 
     script:
     """
-    fastqc $trimmed
+    ${params.fastqc_bin} $trimmed
     """
 }
 

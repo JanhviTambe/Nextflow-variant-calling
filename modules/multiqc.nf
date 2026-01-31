@@ -1,6 +1,7 @@
+// Module for MultiiQC reporting
 process MULTIQC {
       container 'quay.io/biocontainers/multiqc:1.14--pyhdfd78af_0'
-      publishDir "../results/multiqc", mode: 'copy'
+      publishDir "${params.outdir}/multiqc", mode: 'copy'
 
       input:
       path '*' 
@@ -10,6 +11,6 @@ process MULTIQC {
 
       script:
       """
-      multiqc .
+      ${params.multiqc_bin} .
       """
 }

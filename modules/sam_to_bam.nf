@@ -1,6 +1,6 @@
 process SAM_TO_BAM {
     container 'quay.io/biocontainers/samtools:1.17--h00cdaf9_0'
-    publishDir "../results/bam", mode: 'copy'
+    publishDir "${params.outdir}/bam", mode: 'copy'
 
     input:
     path sam
@@ -10,6 +10,6 @@ process SAM_TO_BAM {
 
     script:
     """
-    samtools view -Sb $sam > sample.bam
+    ${params.samtools_bin} view -Sb $sam > sample.bam
     """
 }

@@ -1,6 +1,6 @@
 process VARIANT_CALLING {
     container 'quay.io/biocontainers/bcftools:1.17--h3cc50cf_1'
-    publishDir "../results/variants", mode: 'copy'
+    publishDir "${params.outdir}/variants", mode: 'copy'
 
     input:
     path bam
@@ -11,7 +11,7 @@ process VARIANT_CALLING {
 
     script:
     """
-    bcftools mpileup -f $ref $bam | bcftools call -mv -o variants.vcf
+    ${params.bcftools_bin} mpileup -f $ref $bam | bcftools call -mv -o variants.vcf
     """
 }
 

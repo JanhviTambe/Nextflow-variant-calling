@@ -1,8 +1,5 @@
 
-params.fastq  = "data/sample.fastq"
-params.ref    = "reference/chr22.fa"
-
-include { MY_PIPELINE }  from './worklfow'
+include { MY_PIPELINE }  from './worklfows/workflow.nf'
 
 workflow {    
     fastq_ch = Channel.fromPath(params.fastq, checkIfExists: true)

@@ -17,11 +17,11 @@ workflow MY_PIPELINE {
         raw_qc      = FASTQC_RAW(fastq_input)
         trimmed_fq  = TRIM_READS(fastq_input)
         trimmed_qc  = FASTQC_TRIMMED(trimmed_fq)
-        aligned     = ALIGN_READS(trimmed_fq, ref_input)
-        bam         = SAM_TO_BAM(aligned)
-        sorted_obj  = SORT_INDEX_BAM(bam)
-        variant_qc  = VARIANT_CALLING(sorted_obj.bam, ref_input)
+        aligned_sam     = ALIGN_READS(trimmed_fq, ref_input)
+        raw_bam         = SAM_TO_BAM(aligned_sam)
+        sorted_bam_obj  = SORT_INDEX_BAM(raw_bam)
+        vcf_results  = VARIANT_CALLING(sorted_bam_obj.bam, ref_input)
 
-        all_qc_logs = raw_qc.mix(trimmed_qc).collect()
+        all_qc_logs = raw_qc.mix(trimmed_qc).mix(vcf_results).collect()
         MULTIQC(all_qc_logs)
 }
